@@ -20,7 +20,8 @@ class StudentWriter(object):
         sheet.write(0, 5, 'PT', style)
         sheet.write(0, 6, 'Quizzes', style)
         sheet.write(0, 7, 'Theortical_quiz', style)
-        sheet.write(0, 8, 'grade')
+        sheet.write(0, 8, 'Percentage', style)
+        sheet.write(0, 9, 'Grade', style)
 
         i = 1
 
@@ -34,7 +35,8 @@ class StudentWriter(object):
                 sheet.write(i, 5, student.accepted_pt, style)
                 sheet.write(i, 6, student.accepted_quiz, style)
                 sheet.write(i, 7, student.theortical_quiz, style)
-                sheet.write(i, 8, student.calculate_grade(), style)
+                sheet.write(i, 8, student.get_percentage(), style)
+                sheet.write(i, 9, student.calculate_grade(), style)
                 i += 1
 
         workbook.save("final_grade.xls") 

@@ -24,8 +24,7 @@ class Student(object):
             return 1
         if self.theortical_quiz < 50:
             return 1
-        grade = (self.end_term/100*35 + self.mid_term/100*35 + self.theortical_quiz/100*15 
-                + self.hw/1000*15)/100
+        grade = (self.get_percentage())/100
         if grade < 0.5:
             return 1
         if grade < 0.61:
@@ -35,3 +34,6 @@ class Student(object):
         if grade < 0.86:
             return 4
         return 5
+
+    def get_percentage(self):
+        return self.end_term/100*35 + self.mid_term/100*35 + self.theortical_quiz/100*15 + self.hw/1000*15
