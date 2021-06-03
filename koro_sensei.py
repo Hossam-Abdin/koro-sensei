@@ -1,13 +1,8 @@
 from student_parser import StudentParser
 from student_writer import StudentWriter
 
-sheets = ["data/LIST90.xlsx", "data/LIST91.xlsx"]
-csv_files = ["data/FP group5 Fri 14-16_evaluations.csv", "data/group5.csv"]
+sheets = ["data/2021-06-01T1148_Grades-2020_21_2_IP-18fFUNPEG_90_-_Functional_programming_L+Pr..csv"]
+csv_files = ["data/2021-06-03T1117_Grades-2020_21_2_IP-18fFUNPEG_3_-_Functional_programming_L+Pr..csv"]
 sp = StudentParser(sheets, csv_files)
 sp.parse()
 StudentWriter().write(sp.students)
-
-for s in sp.students:
-    print(str(s.name) + " " + str(s.neptun) + " " + str(s.end_term) + 
-    " " + str(s.mid_term) + " " + str(s.hw) + " " + str(s.accepted_pt)
-    + " " + str(s.accepted_quiz) + " " + str(s.theortical_quiz) + " " + str(s.calculate_grade()))

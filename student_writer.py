@@ -26,9 +26,9 @@ class StudentWriter(object):
         i = 1
 
         for student in students:
-            if student.accepted_quiz != None:
-                sheet.write(i, 0, student.name.decode('utf-8'), style)
-                sheet.write(i, 1, student.neptun.decode('utf-8'), style)
+            if student.accepted_pt != None:
+                sheet.write(i, 0, student.name, style)
+                sheet.write(i, 1, student.neptun, style)
                 sheet.write(i, 2, student.mid_term, style)
                 sheet.write(i, 3, student.end_term, style)
                 sheet.write(i, 4, student.hw, style)
